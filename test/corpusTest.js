@@ -1,7 +1,8 @@
 'use strict';
 
 var assert = require('assert');
-var corpusFile = './main.json';
+var path = require('path');
+var corpusFile = path.join(__dirname, '../corpus/main.json');
 var uuid = require('node-uuid');
 var rewire = require('rewire');
 var sinon = require('sinon');

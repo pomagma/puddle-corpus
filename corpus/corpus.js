@@ -6,13 +6,12 @@ var fs = require('fs');
 var Crud = require('puddle-crud');
 
 module.exports = function (file) {
-    var filePath = path.join(__dirname, file);
-    assert.equal(path.extname(filePath), '.json');
-    var corpus = JSON.parse(fs.readFileSync(filePath));
+    assert.equal(path.extname(file), '.json');
+    var corpus = JSON.parse(fs.readFileSync(file));
     var crud = new Crud(corpus);
     var dumpCorpus = function () {
         fs.writeFileSync(
-            filePath,
+            file,
             JSON.stringify(crud.getState(), undefined, 4)
         );
     };
