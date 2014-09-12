@@ -1,6 +1,6 @@
 {
   "name": "puddle-corpus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Corpus representaion stored in JSON and wrapped into Corpus CRUD API",
   "main": "corpus/corpus.js",
   "scripts": {
