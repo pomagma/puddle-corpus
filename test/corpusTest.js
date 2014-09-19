@@ -2,7 +2,7 @@
 
 var assert = require('assert');
 var path = require('path');
-var corpusFile = path.join(__dirname, '../corpus/main.json');
+var corpusFile = path.join(__dirname, './testData/test.json');
 var uuid = require('node-uuid');
 var rewire = require('rewire');
 var sinon = require('sinon');
@@ -15,7 +15,7 @@ describe('Corpus', function () {
 
     beforeEach(function () {
         writeSpy = sinon.spy();
-        corpusUninitialized = rewire('../corpus/corpus.js');
+        corpusUninitialized = rewire('../index.js');
         corpusUninitialized.__set__('fs', {
             writeFileSync: writeSpy,
             readFileSync: function (filePath) {

@@ -2,9 +2,9 @@
 var assert = require('assert');
 var fs = require('fs');
 var converter = require('../convert');
-var testData = require('./testData.js');
-testData.realJson = fs.readFileSync('./corpus/main.json').toString();
-testData.realCorpus = fs.readFileSync('./corpus/main.corpus').toString();
+var testData = require('./testData/testData.js');
+testData.realJson = fs.readFileSync('./test/testData/test.json').toString();
+testData.realCorpus = fs.readFileSync('./test/testData/test.corpus').toString();
 
 describe('Conversion utility', function () {
 

@@ -2,7 +2,7 @@
   "name": "puddle-corpus",
   "version": "1.0.1",
   "description": "Corpus representaion stored in JSON and wrapped into Corpus CRUD API",
-  "main": "corpus/corpus.js",
+  "main": "index.js",
   "scripts": {
     "coverage": "istanbul check-coverage _mocha",
     "coveralls": "coveralls < ./coverage/lcov.info",
@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/pomagma/puddle-corpus",
   "dependencies": {
-    "puddle-crud": "^1.0.0"
+    "puddle-hub": "^2.0.2"
   },
   "devDependencies": {
     "coveralls": "^2.11.1",

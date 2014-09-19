@@ -3,20 +3,20 @@
 var assert = require('assert');
 var path = require('path');
 var fs = require('fs');
-var Crud = require('puddle-crud');
+var Hub = require('puddle-hub');
 
 module.exports = function (file) {
     assert.equal(path.extname(file), '.json');
     var corpus = JSON.parse(fs.readFileSync(file));
-    var crud = new Crud(corpus);
+    var hub = new Hub(corpus);
     var dumpCorpus = function () {
         fs.writeFileSync(
             file,
-            JSON.stringify(crud.getState(), undefined, 4)
+            JSON.stringify(hub.getState(), undefined, 4)
         );
     };
-    crud.on('create', dumpCorpus);
-    crud.on('remove', dumpCorpus);
-    crud.on('update', dumpCorpus);
-    return crud;
+    hub.on('create', dumpCorpus);
+    hub.on('remove', dumpCorpus);
+    hub.on('update', dumpCorpus);
+    return hub;
 };
